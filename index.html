@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+
+<title>jQuery.listFilterizer Demo</title>
+
+<!-- Styles to make things look nice; NOT needed to make listFilterizer work -->
+<link rel="stylesheet" type="text/css" href="http://github.com/joshuaclayton/blueprint-css/raw/master/blueprint/screen.css" />
+<style>
+body { width: 500px; margin: 0 auto; }
+.list-container { padding: 20px; border-top: 1px solid #666; }
+.demo-list { list-style: none; border-top: 1px dotted #e5e5e5; margin: 5px 0 0; padding: 0; }
+.demo-list li { border-bottom: 1px dotted #e5e5e5; padding: 5px 0; }
+#no-filter-list { overflow: hidden; }
+#no-filter-list li { width: 140px; float: left; margin-right: 5px; }
+</style>
+
+<!-- Scripts and styles for jQuery.listFilterizer-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script src="https://github.com/mjangda/jquery.listfilterizer/raw/master/jquery.listFilterizer.js"></script>
+<link rel="stylesheet" type="text/css" href="https://github.com/mjangda/jquery.listfilterizer/raw/master/jquery.listFilterizer.css" />
+</head>
+<body>
+
+	<h1>jQuery.listFilterizer Demos</h1>
+	
+	<div class="list-container">
+		<h2>Basic List</h2>
+		
+		<p>Here's a simple list with no overrides. You can filter all items with the checkbox selected</p>
+		
+		<ul id="basic-list" class="demo-list">
+			<li>
+				<label for="reporters">
+					<input type="checkbox" id="reporters">
+					<span>Reporters</span>
+				</label>
+			</li>
+			
+			<li>
+				<label for="sales">
+					<input type="checkbox" id="sales">
+					<span>Sales Team</span>
+				</label>
+			</li>
+			<li>
+				<label for="section">
+					<input type="checkbox" id="section">
+					<span>Section Editors</span>
+				</label>
+			</li>
+				<li>
+				<label for="web">
+					<input type="checkbox" id="web">
+					<span>Web Team</span>
+				</label>
+			</li>
+		</ul>
+
+		<script>
+		jQuery(document).ready(function() {
+			jQuery('#basic-list').listFilterer();
+		});
+		</script>
+	</div>
+	
+	<div class="list-container">
+		
+		<h2>Search Only (no filters)</h2>
+		
+		<p>Here's a list with no filters; just a simple search box.</p>
+		
+		<ul id="no-filter-list" class="demo-list">
+			<!-- snipped list from http://www.ncbi.nlm.nih.gov/projects/collab/country.html -->
+			<li>Afghanistan
+			</li><li>Albania
+			</li><li>Algeria
+			</li><li>American Samoa
+			</li><li>Antigua and Barbuda
+			</li><li>Argentina
+			</li><li>Armenia
+			</li><li>Arctic Ocean
+			</li><li>Australia
+			</li><li>Azerbaijan
+			</li><li>Bahamas
+			</li><li>Baltic Sea
+			</li><li>Barbados
+			</li><li>Bassas da India
+			</li><li>Bhutan
+			</li><li>Bolivia
+			</li><li>Borneo
+			</li><li>Bouvet Island
+			</li><li>Brazil
+			</li><li>British Virgin Islands
+			</li><li>Brunei
+			</li><li>Burundi
+		</ul>
+
+		<script>
+		jQuery(document).ready(function() {
+			jQuery('#no-filter-list').listFilterer({
+				filters: []
+			});
+		});
+		</script>
+	</div>
+
+	<div class="list-container">
+		<h2>Custom Filters</h2>
+		
+		<p>Here's a list with custom filters. It's a list with 1000 items, but the only filters available are for items with either a "2" or a "3" in the text.</p>
+
+		<ul id="custom-filter-list" class="demo-list"><li>List Item #0</li><li>List Item #1</li><li>List Item #2</li><li>List Item #3</li><li>List Item #4</li><li>List Item #5</li><li>List Item #6</li><li>List Item #7</li><li>List Item #8</li><li>List Item #9</li><li>List Item #10</li><li>List Item #11</li><li>List Item #12</li><li>List Item #13</li><li>List Item #14</li><li>List Item #15</li><li>List Item #16</li><li>List Item #17</li><li>List Item #18</li><li>List Item #19</li><li>List Item #20</li><li>List Item #21</li><li>List Item #22</li><li>List Item #23</li><li>List Item #24</li><li>List Item #25</li><li>List Item #26</li><li>List Item #27</li><li>List Item #28</li><li>List Item #29</li><li>List Item #30</li><li>List Item #31</li><li>List Item #32</li><li>List Item #33</li><li>List Item #34</li><li>List Item #35</li><li>List Item #36</li><li>List Item #37</li><li>List Item #38</li><li>List Item #39</li><li>List Item #40</li><li>List Item #41</li><li>List Item #42</li><li>List Item #43</li><li>List Item #44</li><li>List Item #45</li><li>List Item #46</li><li>List Item #47</li><li>List Item #48</li><li>List Item #49</li><li>List Item #50</li><li>List Item #51</li><li>List Item #52</li><li>List Item #53</li><li>List Item #54</li><li>List Item #55</li><li>List Item #56</li><li>List Item #57</li><li>List Item #58</li><li>List Item #59</li><li>List Item #60</li><li>List Item #61</li><li>List Item #62</li><li>List Item #63</li><li>List Item #64</li><li>List Item #65</li><li>List Item #66</li><li>List Item #67</li><li>List Item #68</li><li>List Item #69</li><li>List Item #70</li><li>List Item #71</li><li>List Item #72</li><li>List Item #73</li><li>List Item #74</li><li>List Item #75</li><li>List Item #76</li><li>List Item #77</li><li>List Item #78</li><li>List Item #79</li><li>List Item #80</li><li>List Item #81</li><li>List Item #82</li><li>List Item #83</li><li>List Item #84</li><li>List Item #85</li><li>List Item #86</li><li>List Item #87</li><li>List Item #88</li><li>List Item #89</li><li>List Item #90</li><li>List Item #91</li><li>List Item #92</li><li>List Item #93</li><li>List Item #94</li><li>List Item #95</li><li>List Item #96</li><li>List Item #97</li><li>List Item #98</li><li>List Item #99</li><li>List Item #100</li><li>List Item #101</li><li>List Item #102</li><li>List Item #103</li><li>List Item #104</li><li>List Item #105</li><li>List Item #106</li><li>List Item #107</li><li>List Item #108</li><li>List Item #109</li><li>List Item #110</li><li>List Item #111</li><li>List Item #112</li><li>List Item #113</li><li>List Item #114</li><li>List Item #115</li><li>List Item #116</li><li>List Item #117</li><li>List Item #118</li><li>List Item #119</li><li>List Item #120</li><li>List Item #121</li><li>List Item #122</li><li>List Item #123</li><li>List Item #124</li><li>List Item #125</li><li>List Item #126</li><li>List Item #127</li><li>List Item #128</li><li>List Item #129</li><li>List Item #130</li><li>List Item #131</li><li>List Item #132</li><li>List Item #133</li><li>List Item #134</li><li>List Item #135</li><li>List Item #136</li><li>List Item #137</li><li>List Item #138</li><li>List Item #139</li><li>List Item #140</li><li>List Item #141</li><li>List Item #142</li><li>List Item #143</li><li>List Item #144</li><li>List Item #145</li><li>List Item #146</li><li>List Item #147</li><li>List Item #148</li><li>List Item #149</li><li>List Item #150</li><li>List Item #151</li><li>List Item #152</li><li>List Item #153</li><li>List Item #154</li><li>List Item #155</li><li>List Item #156</li><li>List Item #157</li><li>List Item #158</li><li>List Item #159</li><li>List Item #160</li><li>List Item #161</li><li>List Item #162</li><li>List Item #163</li><li>List Item #164</li><li>List Item #165</li><li>List Item #166</li><li>List Item #167</li><li>List Item #168</li><li>List Item #169</li><li>List Item #170</li><li>List Item #171</li><li>List Item #172</li><li>List Item #173</li><li>List Item #174</li><li>List Item #175</li><li>List Item #176</li><li>List Item #177</li><li>List Item #178</li><li>List Item #179</li><li>List Item #180</li><li>List Item #181</li><li>List Item #182</li><li>List Item #183</li><li>List Item #184</li><li>List Item #185</li><li>List Item #186</li><li>List Item #187</li><li>List Item #188</li><li>List Item #189</li><li>List Item #190</li><li>List Item #191</li><li>List Item #192</li><li>List Item #193</li><li>List Item #194</li><li>List Item #195</li><li>List Item #196</li><li>List Item #197</li><li>List Item #198</li><li>List Item #199</li><li>List Item #200</li><li>List Item #201</li><li>List Item #202</li><li>List Item #203</li><li>List Item #204</li><li>List Item #205</li><li>List Item #206</li><li>List Item #207</li><li>List Item #208</li><li>List Item #209</li><li>List Item #210</li><li>List Item #211</li><li>List Item #212</li><li>List Item #213</li><li>List Item #214</li><li>List Item #215</li><li>List Item #216</li><li>List Item #217</li><li>List Item #218</li><li>List Item #219</li><li>List Item #220</li><li>List Item #221</li><li>List Item #222</li><li>List Item #223</li><li>List Item #224</li><li>List Item #225</li><li>List Item #226</li><li>List Item #227</li><li>List Item #228</li><li>List Item #229</li><li>List Item #230</li><li>List Item #231</li><li>List Item #232</li><li>List Item #233</li><li>List Item #234</li><li>List Item #235</li><li>List Item #236</li><li>List Item #237</li><li>List Item #238</li><li>List Item #239</li><li>List Item #240</li><li>List Item #241</li><li>List Item #242</li><li>List Item #243</li><li>List Item #244</li><li>List Item #245</li><li>List Item #246</li><li>List Item #247</li><li>List Item #248</li><li>List Item #249</li><li>List Item #250</li><li>List Item #251</li><li>List Item #252</li><li>List Item #253</li><li>List Item #254</li><li>List Item #255</li><li>List Item #256</li><li>List Item #257</li><li>List Item #258</li><li>List Item #259</li><li>List Item #260</li><li>List Item #261</li><li>List Item #262</li><li>List Item #263</li><li>List Item #264</li><li>List Item #265</li><li>List Item #266</li><li>List Item #267</li><li>List Item #268</li><li>List Item #269</li><li>List Item #270</li><li>List Item #271</li><li>List Item #272</li><li>List Item #273</li><li>List Item #274</li><li>List Item #275</li><li>List Item #276</li><li>List Item #277</li><li>List Item #278</li><li>List Item #279</li><li>List Item #280</li><li>List Item #281</li><li>List Item #282</li><li>List Item #283</li><li>List Item #284</li><li>List Item #285</li><li>List Item #286</li><li>List Item #287</li><li>List Item #288</li><li>List Item #289</li><li>List Item #290</li><li>List Item #291</li><li>List Item #292</li><li>List Item #293</li><li>List Item #294</li><li>List Item #295</li><li>List Item #296</li><li>List Item #297</li><li>List Item #298</li><li>List Item #299</li><li>List Item #300</li><li>List Item #301</li><li>List Item #302</li><li>List Item #303</li><li>List Item #304</li><li>List Item #305</li><li>List Item #306</li><li>List Item #307</li><li>List Item #308</li><li>List Item #309</li><li>List Item #310</li><li>List Item #311</li><li>List Item #312</li><li>List Item #313</li><li>List Item #314</li><li>List Item #315</li><li>List Item #316</li><li>List Item #317</li><li>List Item #318</li><li>List Item #319</li><li>List Item #320</li><li>List Item #321</li><li>List Item #322</li><li>List Item #323</li><li>List Item #324</li><li>List Item #325</li><li>List Item #326</li><li>List Item #327</li><li>List Item #328</li><li>List Item #329</li><li>List Item #330</li><li>List Item #331</li><li>List Item #332</li><li>List Item #333</li><li>List Item #334</li><li>List Item #335</li><li>List Item #336</li><li>List Item #337</li><li>List Item #338</li><li>List Item #339</li><li>List Item #340</li><li>List Item #341</li><li>List Item #342</li><li>List Item #343</li><li>List Item #344</li><li>List Item #345</li><li>List Item #346</li><li>List Item #347</li><li>List Item #348</li><li>List Item #349</li><li>List Item #350</li><li>List Item #351</li><li>List Item #352</li><li>List Item #353</li><li>List Item #354</li><li>List Item #355</li><li>List Item #356</li><li>List Item #357</li><li>List Item #358</li><li>List Item #359</li><li>List Item #360</li><li>List Item #361</li><li>List Item #362</li><li>List Item #363</li><li>List Item #364</li><li>List Item #365</li><li>List Item #366</li><li>List Item #367</li><li>List Item #368</li><li>List Item #369</li><li>List Item #370</li><li>List Item #371</li><li>List Item #372</li><li>List Item #373</li><li>List Item #374</li><li>List Item #375</li><li>List Item #376</li><li>List Item #377</li><li>List Item #378</li><li>List Item #379</li><li>List Item #380</li><li>List Item #381</li><li>List Item #382</li><li>List Item #383</li><li>List Item #384</li><li>List Item #385</li><li>List Item #386</li><li>List Item #387</li><li>List Item #388</li><li>List Item #389</li><li>List Item #390</li><li>List Item #391</li><li>List Item #392</li><li>List Item #393</li><li>List Item #394</li><li>List Item #395</li><li>List Item #396</li><li>List Item #397</li><li>List Item #398</li><li>List Item #399</li><li>List Item #400</li><li>List Item #401</li><li>List Item #402</li><li>List Item #403</li><li>List Item #404</li><li>List Item #405</li><li>List Item #406</li><li>List Item #407</li><li>List Item #408</li><li>List Item #409</li><li>List Item #410</li><li>List Item #411</li><li>List Item #412</li><li>List Item #413</li><li>List Item #414</li><li>List Item #415</li><li>List Item #416</li><li>List Item #417</li><li>List Item #418</li><li>List Item #419</li><li>List Item #420</li><li>List Item #421</li><li>List Item #422</li><li>List Item #423</li><li>List Item #424</li><li>List Item #425</li><li>List Item #426</li><li>List Item #427</li><li>List Item #428</li><li>List Item #429</li><li>List Item #430</li><li>List Item #431</li><li>List Item #432</li><li>List Item #433</li><li>List Item #434</li><li>List Item #435</li><li>List Item #436</li><li>List Item #437</li><li>List Item #438</li><li>List Item #439</li><li>List Item #440</li><li>List Item #441</li><li>List Item #442</li><li>List Item #443</li><li>List Item #444</li><li>List Item #445</li><li>List Item #446</li><li>List Item #447</li><li>List Item #448</li><li>List Item #449</li><li>List Item #450</li><li>List Item #451</li><li>List Item #452</li><li>List Item #453</li><li>List Item #454</li><li>List Item #455</li><li>List Item #456</li><li>List Item #457</li><li>List Item #458</li><li>List Item #459</li><li>List Item #460</li><li>List Item #461</li><li>List Item #462</li><li>List Item #463</li><li>List Item #464</li><li>List Item #465</li><li>List Item #466</li><li>List Item #467</li><li>List Item #468</li><li>List Item #469</li><li>List Item #470</li><li>List Item #471</li><li>List Item #472</li><li>List Item #473</li><li>List Item #474</li><li>List Item #475</li><li>List Item #476</li><li>List Item #477</li><li>List Item #478</li><li>List Item #479</li><li>List Item #480</li><li>List Item #481</li><li>List Item #482</li><li>List Item #483</li><li>List Item #484</li><li>List Item #485</li><li>List Item #486</li><li>List Item #487</li><li>List Item #488</li><li>List Item #489</li><li>List Item #490</li><li>List Item #491</li><li>List Item #492</li><li>List Item #493</li><li>List Item #494</li><li>List Item #495</li><li>List Item #496</li><li>List Item #497</li><li>List Item #498</li><li>List Item #499</li><li>List Item #500</li><li>List Item #501</li><li>List Item #502</li><li>List Item #503</li><li>List Item #504</li><li>List Item #505</li><li>List Item #506</li><li>List Item #507</li><li>List Item #508</li><li>List Item #509</li><li>List Item #510</li><li>List Item #511</li><li>List Item #512</li><li>List Item #513</li><li>List Item #514</li><li>List Item #515</li><li>List Item #516</li><li>List Item #517</li><li>List Item #518</li><li>List Item #519</li><li>List Item #520</li><li>List Item #521</li><li>List Item #522</li><li>List Item #523</li><li>List Item #524</li><li>List Item #525</li><li>List Item #526</li><li>List Item #527</li><li>List Item #528</li><li>List Item #529</li><li>List Item #530</li><li>List Item #531</li><li>List Item #532</li><li>List Item #533</li><li>List Item #534</li><li>List Item #535</li><li>List Item #536</li><li>List Item #537</li><li>List Item #538</li><li>List Item #539</li><li>List Item #540</li><li>List Item #541</li><li>List Item #542</li><li>List Item #543</li><li>List Item #544</li><li>List Item #545</li><li>List Item #546</li><li>List Item #547</li><li>List Item #548</li><li>List Item #549</li><li>List Item #550</li><li>List Item #551</li><li>List Item #552</li><li>List Item #553</li><li>List Item #554</li><li>List Item #555</li><li>List Item #556</li><li>List Item #557</li><li>List Item #558</li><li>List Item #559</li><li>List Item #560</li><li>List Item #561</li><li>List Item #562</li><li>List Item #563</li><li>List Item #564</li><li>List Item #565</li><li>List Item #566</li><li>List Item #567</li><li>List Item #568</li><li>List Item #569</li><li>List Item #570</li><li>List Item #571</li><li>List Item #572</li><li>List Item #573</li><li>List Item #574</li><li>List Item #575</li><li>List Item #576</li><li>List Item #577</li><li>List Item #578</li><li>List Item #579</li><li>List Item #580</li><li>List Item #581</li><li>List Item #582</li><li>List Item #583</li><li>List Item #584</li><li>List Item #585</li><li>List Item #586</li><li>List Item #587</li><li>List Item #588</li><li>List Item #589</li><li>List Item #590</li><li>List Item #591</li><li>List Item #592</li><li>List Item #593</li><li>List Item #594</li><li>List Item #595</li><li>List Item #596</li><li>List Item #597</li><li>List Item #598</li><li>List Item #599</li><li>List Item #600</li><li>List Item #601</li><li>List Item #602</li><li>List Item #603</li><li>List Item #604</li><li>List Item #605</li><li>List Item #606</li><li>List Item #607</li><li>List Item #608</li><li>List Item #609</li><li>List Item #610</li><li>List Item #611</li><li>List Item #612</li><li>List Item #613</li><li>List Item #614</li><li>List Item #615</li><li>List Item #616</li><li>List Item #617</li><li>List Item #618</li><li>List Item #619</li><li>List Item #620</li><li>List Item #621</li><li>List Item #622</li><li>List Item #623</li><li>List Item #624</li><li>List Item #625</li><li>List Item #626</li><li>List Item #627</li><li>List Item #628</li><li>List Item #629</li><li>List Item #630</li><li>List Item #631</li><li>List Item #632</li><li>List Item #633</li><li>List Item #634</li><li>List Item #635</li><li>List Item #636</li><li>List Item #637</li><li>List Item #638</li><li>List Item #639</li><li>List Item #640</li><li>List Item #641</li><li>List Item #642</li><li>List Item #643</li><li>List Item #644</li><li>List Item #645</li><li>List Item #646</li><li>List Item #647</li><li>List Item #648</li><li>List Item #649</li><li>List Item #650</li><li>List Item #651</li><li>List Item #652</li><li>List Item #653</li><li>List Item #654</li><li>List Item #655</li><li>List Item #656</li><li>List Item #657</li><li>List Item #658</li><li>List Item #659</li><li>List Item #660</li><li>List Item #661</li><li>List Item #662</li><li>List Item #663</li><li>List Item #664</li><li>List Item #665</li><li>List Item #666</li><li>List Item #667</li><li>List Item #668</li><li>List Item #669</li><li>List Item #670</li><li>List Item #671</li><li>List Item #672</li><li>List Item #673</li><li>List Item #674</li><li>List Item #675</li><li>List Item #676</li><li>List Item #677</li><li>List Item #678</li><li>List Item #679</li><li>List Item #680</li><li>List Item #681</li><li>List Item #682</li><li>List Item #683</li><li>List Item #684</li><li>List Item #685</li><li>List Item #686</li><li>List Item #687</li><li>List Item #688</li><li>List Item #689</li><li>List Item #690</li><li>List Item #691</li><li>List Item #692</li><li>List Item #693</li><li>List Item #694</li><li>List Item #695</li><li>List Item #696</li><li>List Item #697</li><li>List Item #698</li><li>List Item #699</li><li>List Item #700</li><li>List Item #701</li><li>List Item #702</li><li>List Item #703</li><li>List Item #704</li><li>List Item #705</li><li>List Item #706</li><li>List Item #707</li><li>List Item #708</li><li>List Item #709</li><li>List Item #710</li><li>List Item #711</li><li>List Item #712</li><li>List Item #713</li><li>List Item #714</li><li>List Item #715</li><li>List Item #716</li><li>List Item #717</li><li>List Item #718</li><li>List Item #719</li><li>List Item #720</li><li>List Item #721</li><li>List Item #722</li><li>List Item #723</li><li>List Item #724</li><li>List Item #725</li><li>List Item #726</li><li>List Item #727</li><li>List Item #728</li><li>List Item #729</li><li>List Item #730</li><li>List Item #731</li><li>List Item #732</li><li>List Item #733</li><li>List Item #734</li><li>List Item #735</li><li>List Item #736</li><li>List Item #737</li><li>List Item #738</li><li>List Item #739</li><li>List Item #740</li><li>List Item #741</li><li>List Item #742</li><li>List Item #743</li><li>List Item #744</li><li>List Item #745</li><li>List Item #746</li><li>List Item #747</li><li>List Item #748</li><li>List Item #749</li><li>List Item #750</li><li>List Item #751</li><li>List Item #752</li><li>List Item #753</li><li>List Item #754</li><li>List Item #755</li><li>List Item #756</li><li>List Item #757</li><li>List Item #758</li><li>List Item #759</li><li>List Item #760</li><li>List Item #761</li><li>List Item #762</li><li>List Item #763</li><li>List Item #764</li><li>List Item #765</li><li>List Item #766</li><li>List Item #767</li><li>List Item #768</li><li>List Item #769</li><li>List Item #770</li><li>List Item #771</li><li>List Item #772</li><li>List Item #773</li><li>List Item #774</li><li>List Item #775</li><li>List Item #776</li><li>List Item #777</li><li>List Item #778</li><li>List Item #779</li><li>List Item #780</li><li>List Item #781</li><li>List Item #782</li><li>List Item #783</li><li>List Item #784</li><li>List Item #785</li><li>List Item #786</li><li>List Item #787</li><li>List Item #788</li><li>List Item #789</li><li>List Item #790</li><li>List Item #791</li><li>List Item #792</li><li>List Item #793</li><li>List Item #794</li><li>List Item #795</li><li>List Item #796</li><li>List Item #797</li><li>List Item #798</li><li>List Item #799</li><li>List Item #800</li><li>List Item #801</li><li>List Item #802</li><li>List Item #803</li><li>List Item #804</li><li>List Item #805</li><li>List Item #806</li><li>List Item #807</li><li>List Item #808</li><li>List Item #809</li><li>List Item #810</li><li>List Item #811</li><li>List Item #812</li><li>List Item #813</li><li>List Item #814</li><li>List Item #815</li><li>List Item #816</li><li>List Item #817</li><li>List Item #818</li><li>List Item #819</li><li>List Item #820</li><li>List Item #821</li><li>List Item #822</li><li>List Item #823</li><li>List Item #824</li><li>List Item #825</li><li>List Item #826</li><li>List Item #827</li><li>List Item #828</li><li>List Item #829</li><li>List Item #830</li><li>List Item #831</li><li>List Item #832</li><li>List Item #833</li><li>List Item #834</li><li>List Item #835</li><li>List Item #836</li><li>List Item #837</li><li>List Item #838</li><li>List Item #839</li><li>List Item #840</li><li>List Item #841</li><li>List Item #842</li><li>List Item #843</li><li>List Item #844</li><li>List Item #845</li><li>List Item #846</li><li>List Item #847</li><li>List Item #848</li><li>List Item #849</li><li>List Item #850</li><li>List Item #851</li><li>List Item #852</li><li>List Item #853</li><li>List Item #854</li><li>List Item #855</li><li>List Item #856</li><li>List Item #857</li><li>List Item #858</li><li>List Item #859</li><li>List Item #860</li><li>List Item #861</li><li>List Item #862</li><li>List Item #863</li><li>List Item #864</li><li>List Item #865</li><li>List Item #866</li><li>List Item #867</li><li>List Item #868</li><li>List Item #869</li><li>List Item #870</li><li>List Item #871</li><li>List Item #872</li><li>List Item #873</li><li>List Item #874</li><li>List Item #875</li><li>List Item #876</li><li>List Item #877</li><li>List Item #878</li><li>List Item #879</li><li>List Item #880</li><li>List Item #881</li><li>List Item #882</li><li>List Item #883</li><li>List Item #884</li><li>List Item #885</li><li>List Item #886</li><li>List Item #887</li><li>List Item #888</li><li>List Item #889</li><li>List Item #890</li><li>List Item #891</li><li>List Item #892</li><li>List Item #893</li><li>List Item #894</li><li>List Item #895</li><li>List Item #896</li><li>List Item #897</li><li>List Item #898</li><li>List Item #899</li><li>List Item #900</li><li>List Item #901</li><li>List Item #902</li><li>List Item #903</li><li>List Item #904</li><li>List Item #905</li><li>List Item #906</li><li>List Item #907</li><li>List Item #908</li><li>List Item #909</li><li>List Item #910</li><li>List Item #911</li><li>List Item #912</li><li>List Item #913</li><li>List Item #914</li><li>List Item #915</li><li>List Item #916</li><li>List Item #917</li><li>List Item #918</li><li>List Item #919</li><li>List Item #920</li><li>List Item #921</li><li>List Item #922</li><li>List Item #923</li><li>List Item #924</li><li>List Item #925</li><li>List Item #926</li><li>List Item #927</li><li>List Item #928</li><li>List Item #929</li><li>List Item #930</li><li>List Item #931</li><li>List Item #932</li><li>List Item #933</li><li>List Item #934</li><li>List Item #935</li><li>List Item #936</li><li>List Item #937</li><li>List Item #938</li><li>List Item #939</li><li>List Item #940</li><li>List Item #941</li><li>List Item #942</li><li>List Item #943</li><li>List Item #944</li><li>List Item #945</li><li>List Item #946</li><li>List Item #947</li><li>List Item #948</li><li>List Item #949</li><li>List Item #950</li><li>List Item #951</li><li>List Item #952</li><li>List Item #953</li><li>List Item #954</li><li>List Item #955</li><li>List Item #956</li><li>List Item #957</li><li>List Item #958</li><li>List Item #959</li><li>List Item #960</li><li>List Item #961</li><li>List Item #962</li><li>List Item #963</li><li>List Item #964</li><li>List Item #965</li><li>List Item #966</li><li>List Item #967</li><li>List Item #968</li><li>List Item #969</li><li>List Item #970</li><li>List Item #971</li><li>List Item #972</li><li>List Item #973</li><li>List Item #974</li><li>List Item #975</li><li>List Item #976</li><li>List Item #977</li><li>List Item #978</li><li>List Item #979</li><li>List Item #980</li><li>List Item #981</li><li>List Item #982</li><li>List Item #983</li><li>List Item #984</li><li>List Item #985</li><li>List Item #986</li><li>List Item #987</li><li>List Item #988</li><li>List Item #989</li><li>List Item #990</li><li>List Item #991</li><li>List Item #992</li><li>List Item #993</li><li>List Item #994</li><li>List Item #995</li><li>List Item #996</li><li>List Item #997</li><li>List Item #998</li><li>List Item #999</li></ul>
+
+		<script>
+		jQuery(document).ready(function() {
+			jQuery('#custom-filter-list').listFilterer({
+				filters: [
+					{
+						label: 'Items with "2"'
+						, selector: ':contains(#2)'
+					}
+					,
+					{
+						label: 'Items with "3"'
+						, selector: ':contains(#3)'
+					}
+				]
+			});
+		});
+		</script>
+	</div>
+
+</body>
+</html>
