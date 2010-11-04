@@ -18,8 +18,8 @@
 		return (a.textContent || a.innerText || '').toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
 	};
 	
-	$.fn.listFilterer = function(options) {
-		var options = $.extend({}, $.fn.listFilterer.defaults, options);
+	$.fn.listFilterizer = function(options) {
+		var options = $.extend({}, $.fn.listFilterizer.defaults, options);
         
 		var filtersEnabled = options.filters.length > 0;
 		
@@ -151,7 +151,7 @@
 		});
 	}
 	
-	$.fn.listFilterer.defaults = {
+	$.fn.listFilterizer.defaults = {
 		filters: [
 			{
 				label: 'All'
