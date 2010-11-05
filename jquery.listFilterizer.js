@@ -57,8 +57,11 @@
 					$tools.append($tabs)
 				}
 				
+				// IE freaks out if you try to set the input type as search
+				var inputType = ('placeholder' in document.createElement('input')) ? 'search' : 'text';
+				
 				$input = $('<input/>')
-					.attr('type', 'search')
+					.attr('type', inputType)
 					.attr('placeholder', options.inputPlaceholder)
 					.attr(options.inputAttrs)
 					.addClass(options.inputClass)
