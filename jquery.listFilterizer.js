@@ -89,8 +89,18 @@
 			}
 			
 			function _filterInputKeydown(e) {
+				console.log(e)
 				// Prevent enter key
-				if(e.keyCode == 13) e.preventDefault();
+				switch(e.keyCode) {
+					case 13:
+						e.preventDefault();
+						break;
+					case 27:
+						e.target.setAttribute('value', '');
+						break;
+					default:
+						break;
+				}
 			}
 			function _filterInputKeyup(e) {
 				filterList();
