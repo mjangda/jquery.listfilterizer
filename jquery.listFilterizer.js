@@ -58,7 +58,7 @@
 				}
 				
 				// IE freaks out if you try to set the input type as search
-				var inputType = ('placeholder' in document.createElement('input')) ? 'search' : 'text';
+				var inputType = searchSupported() ? 'search' : 'text';
 				
 				$input = $('<input/>')
 					.attr('type', inputType)
@@ -152,6 +152,12 @@
 			// Do the init thing!
 			init(this);
 		});
+		
+		function searchSupported() {
+			var inputElem = document.createElement('input');
+			inputElem.setAttribute('type', 'search');
+			return inputElem.type !== 'text';
+		}
 	}
 	
 	$.fn.listFilterizer.defaults = {
