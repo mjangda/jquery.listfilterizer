@@ -70,6 +70,7 @@
 					.bind('keyup', _filterInputKeyup)
 					.attr('placeholder', options.inputPlaceholder)
 					;
+				
 				// Fallback for browsers that don't support placeholders
 				if(!supportsPlaceholder()) {
 					$input
@@ -163,7 +164,9 @@
 			}
 			
 			function getActiveSearch() {
-				return $input.val() || '';
+				var search = $input.val() || '';
+				search = (search == options.inputPlaceholder) ? '' : search;
+				return search;
 			}
 			
 			function getActiveTab() {
