@@ -220,14 +220,14 @@
 		, containerTag: 'div'
 		, containerAttrs: {}
 		, toolsTag: 'div'
-		, toolsClass: 'list-filterer-tools'
+		, toolsClass: 'list-filterizer-tools'
 		, toolsAttrs: {}
 		
-		, tabsClass: 'list-filterer-tabs'
+		, tabsClass: 'list-filterizer-tabs'
 		, tabsAttrs: {}
 		, activeTabClass: 'active'
 		
-		, inputClass: 'list-filterer-search'
+		, inputClass: 'list-filterizer-search'
 		, inputPlaceholder: 'Search...'
 		, inputPlaceholderClass: 'input-placeholder'
 		, inputAttrs: {}
